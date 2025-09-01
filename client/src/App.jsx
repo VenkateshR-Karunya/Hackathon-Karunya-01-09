@@ -1,6 +1,7 @@
 // src/App.jsx
 import React, { useState } from "react";
 import axios from "axios";
+import { error } from "console";
 
 function App() {
   const [email, setEmail] = useState("");
@@ -24,5 +25,6 @@ function App() {
     try {
       const res = await axios.post("http://localhost:5000/otp/verify", { email, otp });
       setMessage(res.data.message || "OTP verified successfully!");
-      setStep("success");}}}
+      setStep("success");}
+        catch{}}};
 export default App;
